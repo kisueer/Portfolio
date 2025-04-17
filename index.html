@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisueer's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="/icons-black/icon.png">
+    <link rel="icon" type="image/png" href="/icons-black/icon.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="/icons-black/android-chrome-192x192.png" media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons-black/apple-touch-icon.png" media="(prefers-color-scheme: light)">
+    <link rel="manifest" href="/icons-black/site.webmanifest" media="(prefers-color-scheme: light)">
+
+    <link rel="icon" type="image/png" href="/icons-white/icon.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="/icons-white/android-chrome-192x192.png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons-white/apple-touch-icon.png" media="(prefers-color-scheme: dark)">
+    <link rel="manifest" href="/icons-white/site.webmanifest" media="(prefers-color-scheme: dark)">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#socials">My Socials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <canvas id="starCanvas"></canvas>
+
+    <h1 class="title">About me</h1>
+    <div id="about" class="container">
+        <section id="who">
+            <h1>Who am I?</h1>
+            <p>Hi, I'm Kisueer! I'm currently 14 years old. This journey allows me to combine my passion for technology with hands-on experience in real-world projects. When I’m not at work or school, you’ll most likely find me on the football field. Football has always been a big part of my life, which is why I prefer summer over winter—there’s nothing better than playing in the sun.</p>
+            <p>Languages have also played an important role in my life. I’m fluent in Romanian and English, which helps me connect with people from different backgrounds. I also studied French for a few years in school, and while I wouldn’t call myself fluent, I can understand quite a bit.</p>
+            <p>Beyond coding and sports, I'm always eager to explore new technologies, improve my skills, and take on exciting challenges. Whether it’s developing new projects, experimenting with IoT devices, or diving into cybersecurity concepts, I love pushing myself to learn and grow.</p>
+        </section>
+        <section id="why">
+            <h1>Why Software Engineering?</h1>
+            <p>My interest in technology began when I was around 9 years old. My dad gave me a computer to play Minecraft with my friends. I was beyond excited and spent hours exploring how it worked—downloading files, creating folders, and customizing settings. These simple tasks felt like a whole new world to me.</p>
+            <p>One day, while searching something on Google, I discovered the Inspect Element tool. Seeing the website’s code made me feel like a hacker—I could change things on the page! My excitement quickly faded when I refreshed the site, but that moment sparked my curiosity and passion for technology.</p>
+            <p>As I grew older, I explored various career paths, but software engineering stood out. The ability to build solutions, solve challenges, and bring ideas to life through code made it clear this was my future. Today, I continue to develop my skills and deepen my passion for programming, constantly learning and evolving in this ever-changing field.</p>
+        </section>
+    </div>
+
+    <div id="skills" class="chart-container">
+        <h1 class="title">Skills</h1>
+        <div class="charts">
+            <div class="chart-item">
+                <canvas id="htmlChart"></canvas>
+                <p>HTML</p>
+            </div>
+            <div class="chart-item">
+                <canvas id="cssChart"></canvas>
+                <p>CSS</p>
+            </div>
+            <div class="chart-item">
+                <canvas id="jsChart"></canvas>
+                <p>JavaScript</p>
+            </div>
+            <div class="chart-item">
+                <canvas id="pythonChart"></canvas>
+                <p>Python</p>
+            </div>
+            <div class="chart-item">
+                <canvas id="csharpChart"></canvas>
+                <p>C#</p>
+            </div>
+        </div>
+        <div class="github-stats">
+        <h2>Github Stats</h2>
+            <img class="github-img" src="https://github-readme-stats.vercel.app/api?username=kisueer&show_icons=true&theme=dark" alt="GitHub Stats">
+            <img class="github-img" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kisueer&layout=compact&theme=dark" alt="Top Sprachen">
+        </div>
+        
+        <div id="projects" class="project-container">
+            <h1 class="projects-title">Projects</h1>
+        
+            <div class="project-sections">
+                <div class="mini-section-wrapper">
+                    <h2 class="section-title">Ongoing</h2>
+                    <div class="mini-sections" id="ongoing-section">
+                        <div class="app" id="home-assistant" onclick="openModal('modal-home-assistant', event)">
+                            <img src="/img/home-assistant.svg" alt="logo">
+                            <p class="app-label">Home Assistant</p>
+                        </div>
+                        <div class="app" id="portfolio" onclick="openModal('modal-portfolio', event)">
+                            <img src="/img/portfolio.svg" alt="logo">
+                            <p class="app-label">Porfolio</p>
+                        </div>
+                        <div class="app" id="flipper" onclick="openModal('modal-flipper', event)">
+                            <img src="/img/wifi.svg" alt="logo">
+                            <p class="app-label">Wifi Dumper</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="mini-section-wrapper">
+                    <h2 class="section-title">Completed</h2>
+                    <div class="mini-sections" id="completed-section">
+                        <div class="app" id="HackStarterKit" onclick="openModal('modal-hackstarter', event)">
+                            <img src="img/ollama.svg" alt="logo">
+                            <p class="app-label">Ollama</p>
+                        </div>
+                        <div class="app" id="consultant" onclick="openModal('modal-consultant', event)">
+                            <img src="/img/password.svg" alt="logo">
+                            <p class="app-label">Password Manager</p>
+                            
+                        </div>
+                        <div class="app" id="restaurant" onclick="openModal('modal-restaurant', event)">
+                            <img src="/img/azure.svg" alt="logo">
+                            <p class="app-label">Azure</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-home-assistant" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-home-assistant')">&times;</span>
+                <h1>My Smart Home Project with Home Assistant</h1>
+
+                <p>I am transforming my home into a smart living space using <strong>Home Assistant</strong>, an open-source automation platform. I run Home Assistant on a <strong>Raspberry Pi 3</strong>, which serves as the central hub for managing and automating my smart devices. My goal is to seamlessly integrate and control various devices in my two-story house, with a strong focus on automating my blinds and optimizing energy efficiency.</p>
+
+                <h2>Technologies I Use</h2>
+
+                <h3>Raspberry Pi 3</h3>
+                <p>The core of my smart home setup is a <strong>Raspberry Pi 3</strong>. It provides a lightweight yet powerful platform for running Home Assistant while ensuring flexibility for future upgrades. Despite its limited hardware resources, it handles automation tasks efficiently.</p>
+                <img src="/img/raspberry-3.png" alt="raspberry-3">
+                
+                <h3>Zigbee Dongle</h3>
+                <p>To create a reliable and energy-efficient smart home network, I use a <strong>Zigbee dongle</strong>. Zigbee's mesh capabilities allow me to connect and control devices such as sensors, lights, and other automation components without relying on Wi-Fi, making my setup more stable and responsive.</p>
+                <img src="/img/zigbee-dongle.png" alt="zigbee">
+
+                <h3>ACEMAGIC S1 Intel 12th Alder Lake N95/N97 Mini PC</h3>
+                <p>I utilize a <strong>ACEMAGIC Mini PC</strong> for multiple things , since its connected trough etherenet, i can download torrents with a  <strong>bigger speed</strong>  , eliminating the time for downloading them trough wifi.</p>
+                <img src="/img/acemagic.png" alt="enocean">
+
+                <h2>Challenges I Face</h2>
+                <p>One of the biggest challenges I am facing is <strong>achieving precise control over my blinds</strong>. They use the <strong>UP-Jalousieaktor 1-Kanal 6A UPJ230/01</strong> actuator, which requires careful calibration and compatibility adjustments within Home Assistant. I am actively testing different configurations to ensure smooth operation and responsiveness.</p>
+
+                <h2>Future Plans</h2>
+                <ul>
+                    <li>Enhance the reliability of the Acemagic Mini PC integration by refining automation rules and improving device response times.</li>
+                    <li>Expand my smart home ecosystem by incorporating additional Zigbee devices, such as motion sensors, smart plugs, and security cameras.</li>
+                    <li>Implement advanced automation scenarios, including voice control, adaptive shading based on indoor temperature, and geofencing for energy optimization.</li>
+                </ul>
+
+                <p>This project is an exciting opportunity for me to deepen my understanding of IoT technologies and bridge different communication protocols into a unified home automation system.</p>
+
+            </div>
+        </div>
+        
+        <div id="modal-hackstarter" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-hackstarter')">&times;</span>
+                <h1>My Local AI Playground with Ollama</h1>
+
+                <p>I’ve set up a personal AI environment using <strong>Ollama</strong>, an open-source platform that allows you to run large language models locally on your machine without relying on the cloud. This setup gives me the freedom to experiment with powerful AI models in a private, offline, and customizable environment.</p>
+
+                <h2>Technologies I Use</h2>
+
+                <h3>Ollama</h3>
+                <p><strong>Ollama</strong> is the core of my AI playground. It provides an easy way to download and run open-source AI models directly on my computer via a simple command-line interface and an accessible API. This lets me test different models and integrate them into custom applications or web interfaces securely and efficiently.</p>
+
+                <h3>Local Web Interface</h3>
+                <p>To make interacting with the models more user-friendly, I built a simple HTML-based web interface. It communicates with the <strong>Ollama API</strong>, sending prompts and displaying model responses in real-time, all while keeping data processing local on my machine. This ensures privacy and instant feedback without internet dependency.</p>
+
+                <h3>Python Backend</h3>
+                <p>Behind the scenes, a lightweight <strong>Python Flask server</strong> acts as a bridge between the web interface and the Ollama models. It handles API calls, manages model sessions, and routes responses back to the front end seamlessly.</p>
+
+                <h2>Challenges I Face</h2>
+                <p>One of the biggest challenges in this setup is <strong>managing hardware resources efficiently</strong>, especially when running larger models on devices with limited RAM and processing power. I’m currently optimizing my setup by testing different models and adjusting system configurations for better performance.</p>
+
+                <h2>Future Plans</h2>
+                <ul>
+                    <li>Add support for running multiple AI models in parallel for multitasking applications.</li>
+                    <li>Enhance the web interface with features like prompt history, adjustable parameters (temperature, max tokens), and conversation memory.</li>
+                    <li>Explore integrating voice input and text-to-speech output for a complete AI assistant experience.</li>
+                </ul>
+
+                <p>This project is an exciting opportunity for me to explore the world of open-source AI tools, experiment with model fine-tuning, and build practical, private AI-powered applications tailored to my needs.</p>
+                
+                <a href="https://github.com/kisueer/Ollama-Website" class="button">Github</a>
+
+                <img src="/img/ollama.svg" alt="hackstarter">
+            </div>
+        </div>
+        
+        <div id="modal-consultant" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-consultant')">&times;</span>
+                <h1>My Personal Password Manager in Python</h1>
+
+                <p>I’m developing a secure and lightweight <strong>password manager</strong> using <strong>Python</strong>. The goal is to create a simple yet reliable application for storing and managing my passwords locally, without relying on third-party cloud services. Privacy, encryption, and ease of use are at the core of this project.</p>
+
+                <h2>Technologies I Use</h2>
+
+                <h3>Python</h3>
+                <p>The entire application is built with <strong>Python</strong>, taking advantage of its versatility and simplicity. Python makes it easy to implement file handling, encryption, and user interface components in a clean and maintainable way.</p>
+
+                <h3>Cryptography Library</h3>
+                <p>To keep my passwords secure, I use the <strong>cryptography</strong> library for strong encryption and decryption of sensitive data. It ensures that all stored credentials are encrypted with a unique key, making the password vault safe from unauthorized access.</p>
+
+                <h3>Command Line Interface</h3>
+                <p>For the user interface, I chose the <strong>Command Line</strong>, it's simple and easy for users to read and understand.</p>
+
+                <h2>Challenges I Face</h2>
+                <p>One of the biggest challenges in this project is <strong>securely managing encryption keys</strong>. The key needs to be both accessible for decrypting the vault and protected from unauthorized access. I’m currently working on a solution that involves deriving the key from a master password using a strong key derivation function (KDF) like PBKDF2 or scrypt.</p>
+
+                <h2>Future Plans</h2>
+                <ul>
+                    <li>Add a password generator tool with customizable rules for creating strong, unique passwords.</li>
+                    <li>Implement a feature to export and import encrypted vaults for backup and recovery purposes.</li>
+                    <li>Enhance the user interface with better styling and a search function for quickly finding stored credentials.</li>
+                    <li>Consider integrating two-factor authentication (2FA) token storage and management in the future.</li>
+                </ul>
+
+                <p>This project is a great hands-on opportunity to deepen my knowledge of <strong>Python security practices, encryption techniques, and GUI application development</strong>, while building a practical tool I can use in my daily life.</p>
+
+                <a href="https://github.com/kisueer/Password-Manager" class="button">Github</a>
+
+                <img src="/img/password.svg" alt="Consultant">
+            </div>
+        </div>
+
+        <div id="modal-restaurant" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-restaurant')">&times;</span>
+                <h1>My Python Cyber Toolkit</h1>
+
+                <p>I’m developing a versatile, modular multitool in <strong>Python</strong> for cybersecurity research, network diagnostics, and ethical hacking practices. The project is designed to centralize a variety of security tools and utilities into a single command-line interface for efficiency and learning purposes.</p>
+
+                <h2>Key Features</h2>
+
+                <h3>🌐 Network Scanners</h3>
+                <p>This module includes tools to scan for open ports, active IP addresses, and website vulnerabilities within permissioned and test environments. It supports:</p>
+                <ul>
+                    <li>SQL Vulnerability Scanner</li>
+                    <li>Website URL Scanner</li>
+                    <li>IP and Port Scanner</li>
+                    <li>Ping Sweeps</li>
+                </ul>
+
+                <h3>🔍 OSINT Tools</h3>
+                <p>The OSINT (Open-Source Intelligence) suite helps gather publicly available information for research and security testing:</p>
+                <ul>
+                    <li>Username and Email Trackers</li>
+                    <li>Phone Number and IP Lookups</li>
+                    <li>Dox Creator and Tracker for simulated scenarios in CTF events</li>
+                </ul>
+
+                <h3>⚙️ Utility Tools</h3>
+                <p>Handy network and security utilities for encryption, database searches, and dark web link discovery (for educational purposes only):</p>
+                <ul>
+                    <li>Password Hashing/Decryption (test hashes)</li>
+                    <li>Data Search Tools</li>
+                    <li>Custom IP Generators</li>
+                </ul>
+
+                <h3>🛠️ Platform Integrations</h3>
+                <p>Custom modules for integrating with external services like Discord and Roblox APIs (strictly for consented bot management and testing):</p>
+                <ul>
+                    <li>Bot Management Utilities</li>
+                    <li>Token Validation Tools (for authorized testing)</li>
+                    <li>Webhook Testing Tools</li>
+                </ul>
+
+                <h2>Challenges I Face</h2>
+                <p>The biggest challenge in this project is <strong>managing modularity and ethical safeguards</strong>. I'm actively designing the toolkit to include permission prompts, safe testing modes, and logging systems to ensure responsible use.</p>
+
+                <h2>Future Plans</h2>
+                <ul>
+                    <li>Add advanced reporting and visualization dashboards for scan results.</li>
+                    <li>Integrate multi-threading for faster scans and processing.</li>
+                    <li>Create a plugin system for easy feature expansion.</li>
+                    <li>Develop a web-based GUI for easier tool access and management.</li>
+                </ul>
+
+                <p>This project offers me a deep dive into Python’s networking, encryption, and automation libraries, while reinforcing ethical practices in cybersecurity research and tool development.</p>
+
+                <a href="https://github.com/kisueer/Azure-Multitool" class="button">Github</a>
+                <img src="/img/azure.svg" alt="restaurant">
+
+            </div>
+        </div>
+
+        <div id="modal-portfolio" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-portfolio')">&times;</span>
+                <h1>My Public & Internal Portfolio</h1>
+
+                <p>I am currently working on a <strong>portfolio website</strong> that serves two main purposes:</p>
+                <ul>
+                    <li>A <strong>public portfolio</strong> to showcase my personal projects, skills, and experience.</li>
+                    <li>An <strong>internal portfolio</strong> specifically designed for my workplace, allowing restricted access to work-related projects and documentation.</li>
+                </ul>
+
+                <h2>Design & Aesthetic</h2>
+                <p>One of the key aspects of my portfolio is the <strong>interactive JavaScript-based background</strong>, featuring a <strong>starfield effect</strong> that creates a futuristic and dynamic look. This background, combined with a clean and modern UI, gives the portfolio a sleek and professional feel while making it visually engaging.</p>
+
+                <p>I want the <strong>public version</strong> to be easily accessible and act as a personal showcase for potential employers, collaborators, and anyone interested in my work. Meanwhile, the <strong>internal version</strong> will be restricted to my workplace, containing confidential projects and work-related content.</p>
+
+                <h2>Technical Details & Features</h2>
+                <ul>
+                    <li><strong>App-Style Project Display</strong> – Projects are represented as <strong>app icons</strong>, keeping the interface clean and intuitive.</li>
+                    <li><strong>Secure Authentication</strong> – The internal portfolio will require a <strong>login system</strong> to ensure restricted access.</li>
+                    <li><strong>JavaScript & Animation Effects</strong> – Smooth transitions, modals for project details, and the <strong>starry background effect</strong> bring a polished feel to the site.</li>
+                    <li><strong>Responsive Design</strong> – Optimized for both desktop and mobile viewing.</li>
+                </ul>
+
+                <p>This portfolio project is an exciting challenge as it merges <strong>front-end interactivity</strong>, <strong>security considerations</strong>, and <strong>user-friendly navigation</strong> into a cohesive platform. I'm continuously refining it to make both the <strong>public and internal versions</strong> as seamless and visually appealing as possible.</p>
+                <a href="https://github.com/kisueer/Portfolio" class="button">Github</a>
+            </div>
+        </div>
+
+        <div id="modal-flipper" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-flipper')">&times;</span>
+                <h1>My Wi-Fi Password Recovery Tool in Python</h1>
+
+                <p>I’m building a practical Python-based tool designed to <strong>retrieve saved Wi-Fi credentials</strong> from my own computer. The goal is to provide a simple, local utility to view and back up Wi-Fi profiles and passwords stored on my machine, useful for system recovery, network audits, or migrating to a new device.</p>
+                
+                <h2>Technologies I Use</h2>
+                
+                <h3>Python</h3>
+                <p>The core of the application is written in <strong>Python</strong>, making it lightweight, cross-platform (where possible), and easy to expand. It interacts with system-level commands to list Wi-Fi profiles and extract their saved credentials on authorized devices.</p>
+                
+                <h3>Subprocess and OS Modules</h3>
+                <p>The tool uses Python’s <strong>subprocess</strong> and <strong>os</strong> modules to execute native system commands such as <code>netsh wlan show profiles</code> and <code>netsh wlan show profile [name] key=clear</code> on Windows systems, retrieving stored Wi-Fi passwords where permitted.</p>
+                
+                <h2>Features</h2>
+                <ul>
+                    <li>List all saved Wi-Fi profiles on the system.</li>
+                    <li>Display the stored password for each profile (if accessible).</li>
+                    <li>Save retrieved profiles and passwords to a local encrypted file for backup.</li>
+                    <li>Clear and simple command-line interface for ease of use.</li>
+                </ul>
+                
+                <h2>Challenges I Face</h2>
+                <p>The main challenge is ensuring <strong>cross-platform compatibility</strong>, since each operating system handles Wi-Fi credentials differently. I’m currently focusing on refining the Windows version and exploring solutions for MacOS and Linux support in future updates.</p>
+                
+                <h2>Future Plans</h2>
+                <ul>
+                    <li>Add optional password export with AES encryption for secure backups.</li>
+                    <li>Implement a Tkinter-based GUI for a more user-friendly interface.</li>
+                    <li>Create logs for auditing retrieved data securely.</li>
+                </ul>
+                
+                <p>This project enhances my understanding of <strong>system-level scripting, process management, and local data security</strong> while providing a useful utility for personal IT management and system audits.</p>
+
+                <a href="https://github.com/kisueer/Wifi-Password-Dumper" class="button">Github</a>
+                <img src="/img/wifi.svg" alt="user-logo">
+            </div>
+        </div>
+
+        <div id="socials" class="socials-container">
+            <h1 class="title">My Socials</h1>
+            <div class="social-links">
+                <a href="https://discord.gg/gYhdSZaCQm" class="social-link discord">
+                    <div class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.419 0 1.334-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.419 0 1.334-.946 2.419-2.157 2.419z"/>
+                        </svg>
+                    </div>
+                    <span class="social-text">Join our Discord</span>
+                </a>
+                <a href="https://t.me/lowhealthgrave" class="social-link telegram">
+                    <div class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a.12.12 0 0 0-.056 0zM16.92 7.662a.377.377 0 0 1 .266.216c.036.095.036.216.026.358-.135 1.423-.697 4.86-1.143 6.58-.155.601-.444 1.085-.808 1.256-.696.358-1.183.046-1.549-.415-.375-.461-2.28-1.475-2.937-1.794-.736-.358-1.491-.854-.284-1.907.253-.219 4.7-4.32 4.838-4.688.013-.036.024-.166-.059-.237-.085-.07-.211-.042-.3-.023-1.312.719-5.304 3.35-5.885 3.696-.566.337-1.019.496-1.816.297-.697-.165-1.227-.337-1.736-.55-.614-.253-.531-.39-.532-.842.002-.087.12-.325.448-.582 1.313-1.036 10.5-6.37 11.309-6.72.807-.35 1.358-.416 1.762-.32z"/>
+                        </svg>
+                    </div>
+                    <span class="social-text">Join our Telegram</span>
+                </a>
+                <a href="https://www.instagram.com/kisueer_" class="social-link instagram">
+                    <div class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                    <span class="social-text">Follow on Instagram</span>
+                </a>
+            </div>
+            <style>
+                .socials-container {
+                    padding: 2rem;
+                    text-align: center;
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+                
+                .title {
+                    font-size: 2.5rem;
+                    margin-bottom: 2rem;
+                    color: #333;
+                }
+                
+                .social-links {
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
+                    flex-wrap: wrap;
+                }
+                
+                .social-link {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem 2rem;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                
+                .social-link:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                }
+                
+                .discord {
+                    background-color: #5865F2;
+                }
+                
+                .telegram {
+                    background-color: #0088cc;
+                }
+                
+                .instagram {
+                    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                }
+                
+                .social-icon {
+                    margin-right: 1rem;
+                }
+                
+                .social-text {
+                    font-size: 1.1rem;
+                }
+            </style>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="modal.js" defer></script>
+</body>
+</html>
