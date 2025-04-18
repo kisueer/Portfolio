@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kisueer's Portfolio</title>
+    <!-- Add this base tag -->
+    <base href="https://kisueer.github.io/Portfolio/">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <link rel="icon" type="image/png" href="/icons-black/icon.png">
-    <link rel="icon" type="image/png" href="/icons-black/icon.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" href="/icons-black/android-chrome-192x192.png" media="(prefers-color-scheme: light)">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons-black/apple-touch-icon.png" media="(prefers-color-scheme: light)">
-    <link rel="manifest" href="/icons-black/site.webmanifest" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="icons-black/icon.png">
+    <link rel="icon" type="image/png" href="icons-black/icon.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="icons-black/android-chrome-192x192.png" media="(prefers-color-scheme: light)">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons-black/apple-touch-icon.png" media="(prefers-color-scheme: light)">
+    <link rel="manifest" href="icons-black/site.webmanifest" media="(prefers-color-scheme: light)">
 
-    <link rel="icon" type="image/png" href="/icons-white/icon.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" href="/icons-white/android-chrome-192x192.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons-white/apple-touch-icon.png" media="(prefers-color-scheme: dark)">
-    <link rel="manifest" href="/icons-white/site.webmanifest" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="icons-white/icon.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="icons-white/android-chrome-192x192.png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons-white/apple-touch-icon.png" media="(prefers-color-scheme: dark)">
+    <link rel="manifest" href="icons-white/site.webmanifest" media="(prefers-color-scheme: dark)">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
@@ -90,15 +93,15 @@
                     <h2 class="section-title">Ongoing</h2>
                     <div class="mini-sections" id="ongoing-section">
                         <div class="app" id="home-assistant" onclick="openModal('modal-home-assistant', event)">
-                            <img src="/img/home-assistant.svg" alt="logo">
+                            <img src="img/home-assistant.svg" alt="logo">
                             <p class="app-label">Home Assistant</p>
                         </div>
                         <div class="app" id="portfolio" onclick="openModal('modal-portfolio', event)">
-                            <img src="/img/portfolio.svg" alt="logo">
+                            <img src="img/portfolio.svg" alt="logo">
                             <p class="app-label">Porfolio</p>
                         </div>
                         <div class="app" id="flipper" onclick="openModal('modal-flipper', event)">
-                            <img src="/img/wifi.svg" alt="logo">
+                            <img src="img/wifi.svg" alt="logo">
                             <p class="app-label">Wifi Dumper</p>
                         </div>
                     </div>
@@ -112,12 +115,12 @@
                             <p class="app-label">Ollama</p>
                         </div>
                         <div class="app" id="consultant" onclick="openModal('modal-consultant', event)">
-                            <img src="/img/password.svg" alt="logo">
+                            <img src="img/password.svg" alt="logo">
                             <p class="app-label">Password Manager</p>
                             
                         </div>
                         <div class="app" id="restaurant" onclick="openModal('modal-restaurant', event)">
-                            <img src="/img/azure.svg" alt="logo">
+                            <img src="img/azure.svg" alt="logo">
                             <p class="app-label">Azure</p>
                         </div>
                         </div>
@@ -137,15 +140,15 @@
 
                 <h3>Raspberry Pi 3</h3>
                 <p>The core of my smart home setup is a <strong>Raspberry Pi 3</strong>. It provides a lightweight yet powerful platform for running Home Assistant while ensuring flexibility for future upgrades. Despite its limited hardware resources, it handles automation tasks efficiently.</p>
-                <img src="/img/raspberry-3.png" alt="raspberry-3">
+                <img src="img/raspberry-3.png" alt="raspberry-3">
                 
                 <h3>Zigbee Dongle</h3>
                 <p>To create a reliable and energy-efficient smart home network, I use a <strong>Zigbee dongle</strong>. Zigbee's mesh capabilities allow me to connect and control devices such as sensors, lights, and other automation components without relying on Wi-Fi, making my setup more stable and responsive.</p>
-                <img src="/img/zigbee-dongle.png" alt="zigbee">
+                <img src="img/zigbee-dongle.png" alt="zigbee">
 
                 <h3>ACEMAGIC S1 Intel 12th Alder Lake N95/N97 Mini PC</h3>
                 <p>I utilize a <strong>ACEMAGIC Mini PC</strong> for multiple things , since its connected trough etherenet, i can download torrents with a  <strong>bigger speed</strong>  , eliminating the time for downloading them trough wifi.</p>
-                <img src="/img/acemagic.png" alt="enocean">
+                <img src="img/acemagic.png" alt="enocean">
 
                 <h2>Challenges I Face</h2>
                 <p>One of the biggest challenges I am facing is <strong>achieving precise control over my blinds</strong>. They use the <strong>UP-Jalousieaktor 1-Kanal 6A UPJ230/01</strong> actuator, which requires careful calibration and compatibility adjustments within Home Assistant. I am actively testing different configurations to ensure smooth operation and responsiveness.</p>
@@ -194,7 +197,7 @@
                 
                 <a href="https://github.com/kisueer/Ollama-Website" class="button">Github</a>
 
-                <img src="/img/ollama.svg" alt="hackstarter">
+                <img src="img/ollama.svg" alt="hackstarter">
             </div>
         </div>
         
@@ -231,7 +234,7 @@
 
                 <a href="https://github.com/kisueer/Password-Manager" class="button">Github</a>
 
-                <img src="/img/password.svg" alt="Consultant">
+                <img src="img/password.svg" alt="Consultant">
             </div>
         </div>
 
@@ -291,7 +294,7 @@
                 <p>This project offers me a deep dive into Python’s networking, encryption, and automation libraries, while reinforcing ethical practices in cybersecurity research and tool development.</p>
 
                 <a href="https://github.com/kisueer/Azure-Multitool" class="button">Github</a>
-                <img src="/img/azure.svg" alt="restaurant">
+                <img src="img/azure.svg" alt="restaurant">
 
             </div>
         </div>
@@ -361,7 +364,7 @@
                 <p>This project enhances my understanding of <strong>system-level scripting, process management, and local data security</strong> while providing a useful utility for personal IT management and system audits.</p>
 
                 <a href="https://github.com/kisueer/Wifi-Password-Dumper" class="button">Github</a>
-                <img src="/img/wifi.svg" alt="user-logo">
+                <img src="img/wifi.svg" alt="user-logo">
             </div>
         </div>
 
