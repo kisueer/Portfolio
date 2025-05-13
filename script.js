@@ -1,4 +1,4 @@
-// --- Sterne-Animation mit Canvas ---
+
 const canvas = document.getElementById('starCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -9,25 +9,25 @@ let stars = [];
 const numStars = 600;
 let lastScrollY = window.scrollY;
 
-// Funktion zum Erstellen eines Sterns mit einer zufälligen Parallax-Tiefe
+
 function createStar() {
     return {
-        x: Math.random() * canvas.width,  // Zufällige horizontale Position
-        y: Math.random() * canvas.height, // Zufällige vertikale Position
-        baseY: Math.random() * canvas.height,  // Speichert die Basis-Y-Position
-        radius: Math.random() * 2 + 0.5,  // Größe der Sterne
-        depth: Math.random() * 5 + 1,  // Simuliert Tiefeneffekt (näher oder weiter weg)
-        speed: Math.random() * 2 + 0.5,  // Geschwindigkeit der Bewegung
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        baseY: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 0.5, 
+        depth: Math.random() * 5 + 1,
+        speed: Math.random() * 2 + 0.5,
         opacity: Math.random()
     };
 }
 
-// Sterne initial erzeugen
+
 for (let i = 0; i < numStars; i++) {
     stars.push(createStar());
 }
 
-// Funktion zum Zeichnen der Sterne basierend auf der Scrollrichtung
+
 function drawStars(scrollY) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let scrollDirection = scrollY > lastScrollY ? 1 : -1;
